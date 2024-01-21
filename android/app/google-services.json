@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "442576812311",
+    "project_id": "flutterwarehouse-665ea",
+    "storage_bucket": "flutterwarehouse-665ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442576812311:android:87f3d88bc19b6aa7c15f52",
+        "android_client_info": {
+          "package_name": "ldw.com.flutter.flutter_hello"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB48kI6Y0JBBSOsYT_7hXZ71yoHXoIns-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

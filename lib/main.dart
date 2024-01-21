@@ -1,16 +1,22 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/firebase/login.dart';
-import 'package:flutter_hello/login.dart';
-import 'package:flutter_hello/time_builder.dart';
+import 'package:flutter_hello/test/login.dart';
+import 'package:flutter_hello/test/stream__builder_test.dart';
+import 'package:flutter_hello/test/time_builder.dart';
 
-import 'advanced_login_page.dart';
+import 'chat/advanced_login_page.dart';
 import 'display.dart';
-import 'futurebuilder.dart';
+import 'package:flutter_hello/test/futurebuilder.dart';
 import 'geolocator.dart';
-import 'keytest.dart';
+import 'test/keytest.dart';
+
+import 'package:firebase_core/firebase_core.dart';
+//import 'firebase_options.dart';
 
 void main () async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -74,6 +80,12 @@ void toTimebuilder(BuildContext buildContext){
 void toAdvancedLoginPage(BuildContext buildContext){
   Navigator.of(buildContext).push(MaterialPageRoute(
       builder: (buiildContext) => const AdvancedLoginPage())
+  );
+}
+
+void toStreambuilder(BuildContext buildContext){
+  Navigator.of(buildContext).push(MaterialPageRoute(
+      builder: (buiildContext) => const StreamBuilderPage())
   );
 }
 
@@ -180,6 +192,7 @@ class MyHomePage extends StatelessWidget {
             }),
             myBuilder(Icons.gps_fixed, 'Geolocator', toGeolocator),
             myBuilder(Icons.watch_later, 'TimeBuilder', toTimebuilder),
+            myBuilder(Icons.view_stream, 'StreamBuilder', toStreambuilder),
             myBuilder(Icons.build , 'FutureBuild Test', toTestFutureBuild),
             myBuilder(Icons.search, 'Firebase', toLoginFirebase),
             myBuilder(Icons.login_sharp, 'Login, Advanced', toAdvancedLoginPage),
