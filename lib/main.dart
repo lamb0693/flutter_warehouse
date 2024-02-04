@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hello/firebase/login.dart';
+import 'package:flutter_hello/test/json_parsing.dart';
 import 'package:flutter_hello/test/login.dart';
 import 'package:flutter_hello/test/stream__builder_test.dart';
 import 'package:flutter_hello/test/time_builder.dart';
@@ -86,6 +87,12 @@ void toAdvancedLoginPage(BuildContext buildContext){
 void toStreambuilder(BuildContext buildContext){
   Navigator.of(buildContext).push(MaterialPageRoute(
       builder: (buiildContext) => const StreamBuilderPage())
+  );
+}
+
+void toJsonTest(BuildContext buildContext){
+  Navigator.of(buildContext).push(MaterialPageRoute(
+      builder: (buiildContext) => const JsonParsingPage())
   );
 }
 
@@ -196,6 +203,7 @@ class MyHomePage extends StatelessWidget {
             myBuilder(Icons.build , 'FutureBuild Test', toTestFutureBuild),
             myBuilder(Icons.search, 'Firebase', toLoginFirebase),
             myBuilder(Icons.login_sharp, 'Login, Advanced', toAdvancedLoginPage),
+            myBuilder(Icons.receipt, 'Json paarsing', toJsonTest),
             const MySnackBar(),
           ],
         )
